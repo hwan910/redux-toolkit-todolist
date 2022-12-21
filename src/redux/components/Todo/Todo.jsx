@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTodos, switchTodos } from "../../config/configStore";
+import { deleteTodos, switchTodos } from "../../modueles/TodoSlice";
 import { useNavigate } from "react-router-dom";
 import { Card, Botton, View, DelBotton } from "./styled";
 

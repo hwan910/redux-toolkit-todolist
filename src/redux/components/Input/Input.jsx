@@ -1,5 +1,5 @@
 import InputBox from "./styled";
-import { addTodos } from "../../config/configStore";
+import { addTodos } from "../../modueles/TodoSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";

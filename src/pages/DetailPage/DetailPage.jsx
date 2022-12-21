@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Detail } from "./styled";
-import Header from "../../redux/modueles/Header";
-import Input from "../../redux/modueles/Input";
-import TodoList from "../../redux/modueles/TodoList";
+import Header from "../../redux/components/Header";
+import Input from "../../redux/components/Input";
+import TodoList from "../../redux/components/TodoList";
 import { Home, Section, Article, Nav } from "../HomePage/styled";
 const DetailPage = () => {
   const todos = useSelector((state) => state.todos);

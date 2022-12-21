@@ -1,6 +1,6 @@
-import Header from "../../redux/modueles/Header";
-import Input from "../../redux/modueles/Input";
-import TodoList from "../../redux/modueles/TodoList";
+import Header from "../../redux/components/Header";
+import Input from "../../redux/components/Input";
+import TodoList from "../../redux/components/TodoList";
 import { Home, Section, Article, Nav, NavBar } from "./styled";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
