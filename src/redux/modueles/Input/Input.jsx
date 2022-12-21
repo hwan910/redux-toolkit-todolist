@@ -1,5 +1,5 @@
 import InputBox from "./styled";
-import { addTodos } from "../../../todos";
+import { addTodos } from "../../config/configStore";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -16,7 +16,7 @@ const Input = () => {
     if (newTodos.title.length < 1 || newTodos.contents.length < 1) {
       alert("빈칸을 입력해주세요");
     } else {
-      dispatch(addTodos([...state.todos, newTodos]));
+      dispatch(addTodos(newTodos));
       setTitle("");
       setContents("");
     }

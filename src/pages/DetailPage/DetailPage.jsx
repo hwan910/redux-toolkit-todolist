@@ -7,12 +7,10 @@ import TodoList from "../../redux/modueles/TodoList";
 import { Home, Section, Article, Nav } from "../HomePage/styled";
 const DetailPage = () => {
   const todos = useSelector((state) => state.todos);
-  console.log(todos);
   const navigate = useNavigate();
   const param = useParams();
   console.log(param);
   const list = todos.find((list) => list.title === param.title);
-  console.log(list);
   return (
     <Home>
       <Header></Header>

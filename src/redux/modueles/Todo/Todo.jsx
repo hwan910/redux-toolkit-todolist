@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addTodos, deleteTodos } from "../../../todos";
+import { deleteTodos, switchTodos } from "../../config/configStore";
 import { useNavigate } from "react-router-dom";
 import { Card, Botton, View, DelBotton } from "./styled";
 
@@ -8,19 +8,14 @@ const Todo = ({ isActive }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleDeleteClick = (event) => {
-    dispatch(deleteTodos(event.target.value));
-    console.log(`[${event.target.value}]가 삭제되었습니다.`);
+  const handleDeleteClick = (id) => {
+    dispatch(deleteTodos(id));
     navigate("/");
   };
-  const handleSwitchClick = (event) => {
-    const target = todos.find((element) => element.id === event.target.value);
-    target.isDone === false ? (target.isDone = true) : (target.isDone = false);
-    const copy = [...todos];
-    dispatch(addTodos(copy));
-    console.log(`[${target.title}]가 (완료/취소)되었습니다!`);
+  const handleSwitchClick = (id) => {
+    console.log(id);
+    dispatch(switchTodos(id));
   };
-
   return (
     <>
       {todos
@@ -29,7 +24,7 @@ const Todo = ({ isActive }) => {
           return (
             <Card key={list.id}>
               <div>
-                <Botton value={list.id} onClick={handleSwitchClick}>
+                <Botton onClick={() => handleSwitchClick(list.id)}>
                   {isActive === true ? "" : "✔️"}
                 </Botton>
                 <View
@@ -42,7 +37,7 @@ const Todo = ({ isActive }) => {
                   </h4>
                 </View>
               </div>
-              <DelBotton value={list.title} onClick={handleDeleteClick}>
+              <DelBotton onClick={() => handleDeleteClick(list.id)}>
                 ❌
               </DelBotton>
             </Card>
